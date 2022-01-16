@@ -115,9 +115,12 @@ const Order = ({ history }) => {
                                 <div className="edit-btn" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                     {
                                         order.orderStatus && String(order.orderStatus).includes('Delivered')
-                                            ? <VscFilePdf
-
-                                            />
+                                            ? <Link href={`/Pembelian/Invoice/${order._id}`} style={{
+                                                textDecoration: "none",
+                                                color: "#000"
+                                            }}>
+                                                <VscFilePdf />
+                                            </Link>
                                             : <Link href={`/Pembelian/${order._id}`} style={{
                                                 textDecoration: "none",
                                                 color: "#000"

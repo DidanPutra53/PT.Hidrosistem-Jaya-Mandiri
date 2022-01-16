@@ -34,6 +34,7 @@ import UpdateCustomer from './components/customer/UpdateCustomer';
 import ProcessOrder from './components/order/ProcessOrder';
 import ProcessSell from './components/sell/ProcessSell';
 import Profile from './components/profile/Profile';
+import InvoiceOrder from './components/order/InvoiceOrder';
 
 function App() {
 
@@ -73,6 +74,9 @@ function App() {
           <ProtectedRoute path="/Customer" exact component={Customer} />
           <ProtectedRoute path="/User" exact isSuperAdmin={true} component={ListUser} />
           <ProtectedRoute path="/User/Tambah" isSuperAdmin={true} component={TambahUser} />
+          {/* INVOICE */}
+          <ProtectedRoute path="/Pembelian/Invoice/:id" exact component={InvoiceOrder} />
+          {/* INVOICE */}
           <ProtectedRoute path="/Pembelian/:id" exact component={ProcessOrder} />
           <ProtectedRoute path="/Pembelian" exact component={Order} />
           <ProtectedRoute path="/Penjualan/:id" exact component={ProcessSell} />

@@ -368,3 +368,57 @@ html {
     }
   }
 }
+
+//InvoiceOrder
+.invoice {
+  background-color: #ffffff;
+  margin: 0px 20px;
+  padding: 30px;
+  .header-invoice {
+    .invoice-number {
+      display: flex;
+      justify-content: space-between;
+      h1 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0px;
+      }
+      h5 {
+        font-size: 14px;
+        margin: 0px;
+      }
+    }
+    .invoice-image {
+      flex: 1;
+      img {
+        height: 50px;
+      }
+    }
+  }
+  hr {
+    opacity: 1;
+    background-color: #000;
+  }
+  .order-sell-invoice {
+    h5 {
+      font-size: 14px;
+      margin: 0px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+  .list-invoice {
+    table {
+      width: 100%;
+      tr {
+        th {
+          padding: 10px;
+          background: #f1f5fb;
+        }
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
