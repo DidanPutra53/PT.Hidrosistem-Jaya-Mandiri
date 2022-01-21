@@ -115,7 +115,7 @@ const Sell = ({ history }) => {
                                 <div className="edit-btn" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                                     {
                                         sell.orderStatus && String(sell.orderStatus).includes('Delivered')
-                                            ? <Link href="#" style={{
+                                            ? <Link href={`/Penjualan/Invoice/${sell._id}`} style={{
                                                 textDecoration: "none",
                                                 color: "#000"
                                             }}>

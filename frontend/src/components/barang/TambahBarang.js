@@ -203,6 +203,7 @@ const TambahBarang = ({ history }) => {
                     <div className="button">
                         <Button
                             type='submit'
+                            variant="contained"
                         >
                             Tambah
                         </Button>

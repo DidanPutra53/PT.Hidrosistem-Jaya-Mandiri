@@ -48,49 +48,41 @@ const Barang = ({ history }) => {
                     label: 'Kode Barang',
                     field: 'kdbrg',
                     sort: 'asc',
-                    width: 175
                 },
                 {
                     label: 'Nama Barang',
                     field: 'name',
                     sort: 'asc',
-                    width: 350
                 },
                 {
                     label: 'Nama Vendor',
                     field: 'namavendor',
                     sort: 'asc',
-                    width: 250
                 },
                 {
                     label: 'Stock',
                     field: 'stock',
                     sort: 'asc',
-                    width: 100
                 },
                 {
                     label: 'Kategori',
                     field: 'kdgroup',
                     sort: 'asc',
-                    width: 200
                 },
                 {
                     label: 'Status',
                     field: 'status',
                     sort: 'asc',
-                    width: 100
                 },
                 {
                     label: 'Harga Jual',
                     field: 'hjual',
                     sort: 'asc',
-                    width: 125
                 },
                 {
                     label: 'Harga Beli',
                     field: 'hbeli',
                     sort: 'asc',
-                    width: 125
                 },
                 {
                     field: 'actions',
@@ -117,12 +109,13 @@ const Barang = ({ history }) => {
                         {
                             !loading && (!isAuthenticated || user.role !== 'checker') && (
                                 <div className="edit-btn" style={{ display: "flex", justifyContent: "space-between" }}>
-                                    <Link to={`/Barang/${product._id}`} style={{ textDecoration: "none", color: "#000" }}><FiShoppingCart /></Link>
-                                    <Link to={`/Barang/Edit/${product._id}`} style={{ textDecoration: "none", color: "#000" }}><FiEdit /></Link>
+                                    <Link to={`/Barang/${product._id}`} style={{ textDecoration: "none", color: "#000", margin: "0em 0.5em" }}><FiShoppingCart /></Link>
+                                    <Link to={`/Barang/Edit/${product._id}`} style={{ textDecoration: "none", color: "#000", margin: "0em 0.5em" }}><FiEdit /></Link>
                                     <button style={{
                                         border: "none",
                                         backgroundColor: "transparent",
-                                        padding: "0px"
+                                        padding: "0px",
+                                        margin: "0em 0.5em"
                                     }}
                                         onClick={() => deleteProductHandler(product._id)}
                                         className="trash"><FiTrash /></button>
@@ -149,10 +142,8 @@ const Barang = ({ history }) => {
                     bordered
                     hover
                     responsive
-                    maxHeight='75vh'
-                    minWidth='100vh'
-                    scrollX
-                    scrollY
+                    maxHeight='100%'
+                    autoWidth
                 />
             </div>
         </Fragment>

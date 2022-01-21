@@ -1,13 +1,18 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { RiAccountCircleLine } from 'react-icons/ri'
 import { useSelector } from 'react-redux'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SidebarMenu from './sidebarasset/SidebarMenu'
 import SidebarSupport from './sidebarasset/SidebarSupport'
+import { BiXCircle } from 'react-icons/bi'
 
 import Poppins from '../../font/Poppins/Poppins-Black.ttf'
 
 const Sidebar = () => {
+    const [sidebar, setSidebar] = useState(false)
+    const handleClickSidebar = () => {
+        setSidebar(!sidebar)
+    }
 
     const { user } = useSelector(state => state.auth)
 
@@ -31,7 +36,10 @@ const Sidebar = () => {
 
     return (
         <Fragment>
-            <div className="sidebar">
+            <div className={sidebar ? 'sidebar active' : 'sidebar'}>
+                <button className="out-sidebar" onClick={handleClickSidebar}>
+                    <BiXCircle />
+                </button>
                 <div className="userpicture">
                     <RiAccountCircleLine />
                     <p>{user.namapengguna}</p>

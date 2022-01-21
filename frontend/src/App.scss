@@ -4,10 +4,16 @@
     format("truetype");
 }
 
+//RESPONSIVE//
+$phone: 480px;
+//----------//
+
 body,
 html {
   margin: 0px;
   padding: 0px;
+  width: 100%;
+  height: 100%;
   background-color: #f1f5fb;
   font-family: "Poppins";
   hr {
@@ -33,14 +39,17 @@ html {
 
 // SIDEBAR.JS
 .sidebar {
-  height: 100vh;
-  min-width: 230px;
+  min-height: 100vh;
+  width: 230px;
   border-radius: 0px;
   background: #ffffff;
   box-shadow: 10px 10px 50px #bfbfbf, -10px -10px 50px #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  button {
+    display: none;
+  }
   .userpicture {
     display: flex;
     flex-direction: column;
@@ -82,6 +91,9 @@ html {
   img {
     width: auto;
     height: 50%;
+  }
+  .sidebar-toggle {
+    display: none;
   }
 }
 
@@ -370,54 +382,276 @@ html {
 }
 
 //InvoiceOrder
-.invoice {
-  background-color: #ffffff;
-  margin: 0px 20px;
-  padding: 30px;
-  .header-invoice {
-    .invoice-number {
-      display: flex;
-      justify-content: space-between;
-      h1 {
-        font-size: 18px;
-        font-weight: bold;
-        margin: 0px;
+.invoice-print {
+  margin: 0px 80px;
+  .invoice {
+    background-color: #ffffff;
+    padding: 30px;
+    .header-invoice {
+      .invoice-number {
+        display: flex;
+        justify-content: space-between;
+        h1 {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 0px;
+        }
+        h5 {
+          font-size: 14px;
+          margin: 0px;
+        }
       }
+      .invoice-image {
+        flex: 1;
+        img {
+          height: 50px;
+        }
+      }
+    }
+    hr {
+      opacity: 1;
+      background-color: #000;
+    }
+    .order-sell-invoice {
       h5 {
         font-size: 14px;
         margin: 0px;
+        font-weight: bold;
+        margin-bottom: 5px;
       }
     }
-    .invoice-image {
-      flex: 1;
-      img {
-        height: 50px;
+    .list-invoice {
+      table {
+        width: 100%;
+        tr {
+          th {
+            padding: 10px;
+            background: #f1f5fb;
+          }
+          td {
+            padding: 10px;
+          }
+        }
       }
     }
   }
-  hr {
-    opacity: 1;
-    background-color: #000;
+}
+
+//RESPONSIVE PHONES
+@media only screen and (max-width: $phone) {
+  //APP.JS
+  .App {
+    display: block;
+    position: relative;
   }
-  .order-sell-invoice {
-    h5 {
-      font-size: 14px;
-      margin: 0px;
-      font-weight: bold;
-      margin-bottom: 5px;
+
+  //SIDEBAR.JS
+  .sidebar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    z-index: 99;
+    button {
+      padding: 0px 0px;
+      width: 1.8em;
+      height: 1.8em;
+      border: none;
+      display: block;
+      background-color: transparent;
+      margin: 1em 1em;
+      svg {
+        width: 1.8em;
+        height: 1.8em;
+      }
+    }
+    .userpicture {
+      padding: 2em 0em;
+      svg {
+        width: 3em;
+        height: 3em;
+      }
+      p {
+        font-size: 1em;
+      }
+      b {
+        font-size: 1em;
+      }
     }
   }
-  .list-invoice {
-    table {
+  .sidebar.active {
+    position: absolute;
+    height: 100%;
+    z-index: 99;
+    left: 100%;
+    button {
+      padding: 0px 0px;
+      width: 1.8em;
+      height: 1.8em;
+      border: none;
+      display: block;
+      background-color: transparent;
+      margin: 1em 1em;
+      svg {
+        width: 1.8em;
+        height: 1.8em;
+      }
+    }
+    .userpicture {
+      padding: 2em 0em;
+      svg {
+        width: 3em;
+        height: 3em;
+      }
+      p {
+        font-size: 1em;
+      }
+      b {
+        font-size: 1em;
+      }
+    }
+  }
+
+  //HEADER.JS
+  .header {
+    padding: 1em;
+    height: auto;
+    h1 {
+      display: none;
+    }
+    img {
+      width: auto;
+      height: 2em;
+    }
+  }
+
+  //MASUK.JS
+  .masuk-content {
+    width: calc(100vw - calc(100vw - 100%));
+    height: calc(100vh - calc(100vh - 100%));
+    img {
+      display: none;
+    }
+    .masuk-box {
+      height: 100%;
       width: 100%;
-      tr {
-        th {
-          padding: 10px;
-          background: #f1f5fb;
+      padding: 3em 1em;
+      display: block;
+      margin: auto;
+      img {
+        width: auto;
+        height: 2.5em;
+        display: block;
+        margin: auto;
+      }
+      h1 {
+        display: none;
+      }
+      .input {
+        margin: 1em;
+        font-size: 0.8rem;
+        .Input-form {
+          margin: 4em 0em;
+          display: flex;
+          flex-direction: column;
+          label {
+            font-weight: bold;
+            opacity: 0.75;
+          }
         }
-        td {
-          padding: 10px;
+      }
+    }
+  }
+
+  //HOME.JS
+  .home-content {
+    max-width: calc(100vw - calc(100vw - 100%));
+    height: auto;
+    padding: 0em 1em;
+    h1 {
+      margin: 0.5em 0em;
+      font-size: 1.3em;
+    }
+    h2 {
+      margin: 0.5em 0em;
+      font-size: 1em;
+    }
+  }
+  .box-list {
+    padding: 0.5em 0em;
+    .box-up {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .box {
+        background-color: #fff;
+        border-radius: 25px;
+        height: 8.5em;
+        display: flex;
+        margin: 0.8em 0em;
+        .Info {
+          margin-right: 40px;
+          padding: 25px 20px;
+          flex: 65%;
+          p {
+            font-size: 18px;
+            font-weight: bold;
+          }
+          b {
+            font-size: 22px;
+          }
         }
+        .icon {
+          flex: 1;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding-right: 15px;
+          svg {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  //ALLLIST.JS
+  .content {
+    max-width: calc(100vw - calc(100vw - 100%));
+    height: auto;
+    h2 {
+      padding: 0em 1em;
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    .dataTables_wrapper {
+      padding: 1em 1em;
+    }
+  }
+
+  //ALLTAMBAH.JS
+  .Tambah {
+    display: flex;
+    padding: 1em 1em;
+    flex-wrap: wrap;
+    .input {
+      display: flex;
+      flex-direction: column;
+      margin: 1em 0em;
+      width: 100%;
+      padding: 0px 0px;
+      label {
+        font-weight: bold;
+        margin: 0px;
+      }
+    }
+    .button {
+      padding: 0px 0px;
+      margin: 0em 0em;
+      Button {
+        margin: 0px 0px;
       }
     }
   }

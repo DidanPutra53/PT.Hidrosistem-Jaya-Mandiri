@@ -35,6 +35,7 @@ import ProcessOrder from './components/order/ProcessOrder';
 import ProcessSell from './components/sell/ProcessSell';
 import Profile from './components/profile/Profile';
 import InvoiceOrder from './components/order/InvoiceOrder';
+import InvoiceSell from './components/sell/InvoiceSell';
 
 function App() {
 
@@ -76,6 +77,7 @@ function App() {
           <ProtectedRoute path="/User/Tambah" isSuperAdmin={true} component={TambahUser} />
           {/* INVOICE */}
           <ProtectedRoute path="/Pembelian/Invoice/:id" exact component={InvoiceOrder} />
+          <ProtectedRoute path="/Penjualan/Invoice/:id" exact component={InvoiceSell} />
           {/* INVOICE */}
           <ProtectedRoute path="/Pembelian/:id" exact component={ProcessOrder} />
           <ProtectedRoute path="/Pembelian" exact component={Order} />

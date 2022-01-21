@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { logoHJM } from '../images/images'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Header = () => {
     return (
