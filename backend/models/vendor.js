@@ -13,19 +13,15 @@ const vendorSchema = new mongoose.Schema({
     },
     notlp: {
         type: String,
-        required: [true, 'Masukan Nomor Telepon Vendor']
     },
     labelalamat: {
         type: String,
-        required: [true, 'Masukan Alamat']
     },
     kota: {
         type: String,
-        required: [true, 'Masukan Kota'],
     },
     kodepos: {
         type: String,
-        required: [true, 'Masukan Kode pos']
     },
     createAt: {
         type: Date,

@@ -75,8 +75,3 @@ userSchema.methods.getResetPasswordToken = function () {
     return resetToken;
 }
 module.exports = mongoose.model('User', userSchema)
-
-//admin account
-//username : superadmin321 pass : superadmin
-//checker account
-//username : checker pass : checkerganteng

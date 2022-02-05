@@ -57,27 +57,15 @@ const BeliBarang = ({ history, match }) => {
             <div className="content">
                 <h2>Detail Barang</h2>
                 <div className="beli-barang-details"
-                    style={{
-                        width: "45%",
-                        backgroundColor: "#fff",
-                        margin: "0px 80px",
-                        borderRadius: "15px",
-                    }}>
+                >
                     <div className="beli-barang-name"
-                        style={{
-                            padding: "30px",
-                        }}>
+                    >
                         <b>Nama Barang<h5>{product.name}</h5></b>
                         <hr />
                         <b>Kode Barang<h5>{product.kdbrg}</h5></b>
                         <hr />
                         <b>Stock
-                            <div className="stockCounter "
-                                style={{
-                                    width: "50%",
-                                    display: "flex"
-                                }}
-                            >
+                            <div className="stockCounter">
                                 <span className='btn btn-light border-dark minus' onClick={decreaseQty}>
                                     -
                                 </span>
@@ -97,10 +85,7 @@ const BeliBarang = ({ history, match }) => {
                         <hr />
                         <b>Vendor<h5>{product.namavendor}</h5></b>
                         <hr />
-                        <div className="harga-input" style={{
-                            display: "flex",
-                            flexDirection: "column"
-                        }}>
+                        <div className="harga-input" >
                             <label style={{
                                 fontWeight: 'bold',
                             }}>
@@ -113,11 +98,7 @@ const BeliBarang = ({ history, match }) => {
                         </div>
                     </div>
                     <hr />
-                    <div className="barang-button" style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        padding: "15px",
-                    }}>
+                    <div className="barang-button" >
                         <Button variant="contained" onClick={addToOrder}>Isi Alamat Vendor</Button>
                     </div>
                 </div>

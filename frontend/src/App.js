@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 
 import './App.scss';
+import './AppPhone.scss';
 import ProtectedRoute from './components/route/ProtectedRoute';
 import { loadUser } from './actions/authAction';
 import store from './store'

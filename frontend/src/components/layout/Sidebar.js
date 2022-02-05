@@ -5,14 +5,24 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SidebarMenu from './sidebarasset/SidebarMenu'
 import SidebarSupport from './sidebarasset/SidebarSupport'
 import { BiXCircle } from 'react-icons/bi'
+import { AiOutlineLeft } from 'react-icons/ai'
 
 import Poppins from '../../font/Poppins/Poppins-Black.ttf'
+import { useEffect } from 'react';
 
 const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false)
     const handleClickSidebar = () => {
         setSidebar(!sidebar)
     }
+
+    useEffect(() => {
+        if (!sidebar) {
+            document.body.style.overflowY = 'hidden'
+        } else {
+            document.body.style.overflowY = 'unset'
+        }
+    })
 
     const { user } = useSelector(state => state.auth)
 
@@ -37,9 +47,12 @@ const Sidebar = () => {
     return (
         <Fragment>
             <div className={sidebar ? 'sidebar active' : 'sidebar'}>
-                <button className="out-sidebar" onClick={handleClickSidebar}>
+                <div className="open-sidebar" onClick={handleClickSidebar}>
+                    <AiOutlineLeft />
+                </div>
+                <div className="cross" onClick={handleClickSidebar}>
                     <BiXCircle />
-                </button>
+                </div>
                 <div className="userpicture">
                     <RiAccountCircleLine />
                     <p>{user.namapengguna}</p>

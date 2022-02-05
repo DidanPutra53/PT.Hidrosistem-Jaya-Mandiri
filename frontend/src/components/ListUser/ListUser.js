@@ -108,8 +108,7 @@ const ListUser = ({ history }) => {
                     striped
                     hover
                     responsive
-                    maxHeight='500px'
-                    scrollX
+                    small
                 />
             </div>
         </Fragment>

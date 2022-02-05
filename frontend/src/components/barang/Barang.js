@@ -99,7 +99,10 @@ const Barang = ({ history }) => {
                 stock: product.stock,
                 kdgroup: product.kdgroup,
                 hjual: product.hjual,
-                hbeli: product.hbeli,
+                hbeli:
+                    <div>
+                        Rp. {product.hbeli}
+                    </div>,
                 status:
                     <div>
                         <span className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? 'Ready' : 'Barang kosong'}</span>
@@ -140,10 +143,10 @@ const Barang = ({ history }) => {
                 <MDBDataTable
                     data={setProducts()}
                     bordered
+                    striped
                     hover
                     responsive
-                    maxHeight='100%'
-                    autoWidth
+                    small
                 />
             </div>
         </Fragment>

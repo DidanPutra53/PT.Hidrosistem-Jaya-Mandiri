@@ -49,7 +49,7 @@ const Masuk = () => {
                             <TextField
                                 id="standard-basic"
                                 label="Username"
-                                variant="standard"
+                                variant="filled"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                             />
@@ -58,10 +58,10 @@ const Masuk = () => {
                             <label htmlFor="password_field">Password</label>
                             <TextField
                                 id="standard-password-input"
-                                label="Password"
                                 type="password"
                                 autoComplete="current-password"
-                                variant="standard"
+                                label="Password"
+                                variant="filled"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
