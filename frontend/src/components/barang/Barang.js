@@ -48,44 +48,53 @@ const Barang = ({ history }) => {
                     label: 'Kode Barang',
                     field: 'kdbrg',
                     sort: 'asc',
+                    width: 150,
                 },
                 {
                     label: 'Nama Barang',
                     field: 'name',
                     sort: 'asc',
+                    width: 250,
                 },
                 {
                     label: 'Nama Vendor',
                     field: 'namavendor',
                     sort: 'asc',
+                    width: 200,
                 },
                 {
                     label: 'Stock',
                     field: 'stock',
                     sort: 'asc',
+                    width: 50,
                 },
                 {
                     label: 'Kategori',
                     field: 'kdgroup',
                     sort: 'asc',
+                    width: 200,
                 },
                 {
                     label: 'Status',
                     field: 'status',
                     sort: 'asc',
+                    width: 200,
                 },
                 {
                     label: 'Harga Jual',
                     field: 'hjual',
                     sort: 'asc',
+                    width: 150,
                 },
                 {
                     label: 'Harga Beli',
                     field: 'hbeli',
                     sort: 'asc',
+                    width: 150,
                 },
                 {
                     field: 'actions',
+                    width: 150,
                 },
             ],
             rows: []
@@ -98,7 +107,10 @@ const Barang = ({ history }) => {
                 namavendor: product.namavendor,
                 stock: product.stock,
                 kdgroup: product.kdgroup,
-                hjual: product.hjual,
+                hjual:
+                    <div>
+                        Rp. {product.hjual}
+                    </div>,
                 hbeli:
                     <div>
                         Rp. {product.hbeli}
@@ -147,6 +159,8 @@ const Barang = ({ history }) => {
                     hover
                     responsive
                     small
+                    maxHeight='500px'
+                    scrollY={true}
                 />
             </div>
         </Fragment>

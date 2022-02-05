@@ -16,7 +16,6 @@ $desktop: 1920px;
     padding: 0px;
     background-color: #f1f5fb;
     font-family: "Poppins";
-    overflow-y: scroll;
     hr {
       opacity: 0;
     }
@@ -40,7 +39,8 @@ $desktop: 1920px;
 
   // SIDEBAR.JS
   .sidebar {
-    width: 230px;
+    height: 100vh;
+    min-width: 230px;
     border-radius: 0px;
     background: #ffffff;
     box-shadow: 10px 10px 50px #bfbfbf, -10px -10px 50px #ffffff;

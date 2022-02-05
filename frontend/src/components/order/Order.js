@@ -154,6 +154,8 @@ const Order = ({ history }) => {
                     hover
                     responsive
                     small
+                    maxHeight='500px'
+                    scrollY={true}
                 />
             </div>
         </Fragment>
