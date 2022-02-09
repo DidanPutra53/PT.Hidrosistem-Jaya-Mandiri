@@ -130,8 +130,9 @@ const Vendor = ({ history }) => {
                     hover
                     responsive
                     small
-                    maxHeight='500px'
-                    scrollY={true}
+                    maxHeight='400px'
+                    autoWidth
+                    scrollY
                 />
             </div>
         </Fragment>
