@@ -19,7 +19,7 @@ const TambahUser = ({ history }) => {
 
     useEffect(() => {
         if (success) {
-            history.push('/Login')
+            history.push('/User')
             alert.success('User Berhasil Ditambah')
         }
         if (error) {

@@ -63,7 +63,7 @@ export const registerUserReducer = (state = { user: {} }, action) => {
             return {
                 ...state,
                 loading: false,
-                success: action.payload.success,
+                success: true,
                 user: action.payload
             }
         case authConstants.USER_REGISTER_FAILURE:
