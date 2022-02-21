@@ -115,9 +115,16 @@ export const userReducer = (state = {}, action) => {
     switch (action.type) {
         case authConstants.DELETE_USER_REQUEST:
         case authConstants.UPDATE_PASSWORD_REQUEST:
+        case authConstants.UPDATE_USER_REQUEST:
             return {
                 ...state,
                 loading: true,
+            }
+        case authConstants.UPDATE_USER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                isUpdated: action.payload
             }
         case authConstants.UPDATE_PASSWORD_SUCCESS:
             return {
@@ -128,6 +135,11 @@ export const userReducer = (state = {}, action) => {
             return {
                 ...state,
                 isDeleted: action.payload
+            }
+        case authConstants.UPDATE_USER_RESET:
+            return {
+                ...state,
+                isUpdated: false
             }
         case authConstants.UPDATE_PASSWORD_RESET:
             return {
@@ -141,6 +153,7 @@ export const userReducer = (state = {}, action) => {
             }
         case authConstants.DELETE_USER_FAILURE:
         case authConstants.UPDATE_PASSWORD_FAILURE:
+        case authConstants.UPDATE_USER_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -150,6 +163,33 @@ export const userReducer = (state = {}, action) => {
             return {
                 ...state,
                 error: null,
+            }
+        default:
+            return state
+    }
+}
+
+export const userDetailsReducer = (state = { user: {} }, action) => {
+    switch (action.type) {
+        case authConstants.DETAILS_USER_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            }
+        case authConstants.DETAILS_USER_SUCCESS:
+            return {
+                loading: false,
+                user: action.payload
+            }
+        case authConstants.DETAILS_USER_FAILURE:
+            return {
+                ...state,
+                error: action.payload
+            }
+        case authConstants.CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
             }
         default:
             return state

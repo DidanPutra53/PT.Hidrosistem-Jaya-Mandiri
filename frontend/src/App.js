@@ -37,6 +37,7 @@ import ProcessSell from './components/sell/ProcessSell';
 import Profile from './components/profile/Profile';
 import InvoiceOrder from './components/order/InvoiceOrder';
 import InvoiceSell from './components/sell/InvoiceSell';
+import UpdateUser from './components/ListUser/UpdateUser';
 
 function App() {
 
@@ -76,6 +77,7 @@ function App() {
           <ProtectedRoute path="/Customer" exact component={Customer} />
           <ProtectedRoute path="/User" exact isSuperAdmin={true} component={ListUser} />
           <ProtectedRoute path="/User/Tambah" isSuperAdmin={true} component={TambahUser} />
+          <ProtectedRoute path="/User/Edit/:id" isSuperAdmin={true} component={UpdateUser} />
           {/* INVOICE */}
           <ProtectedRoute path="/Pembelian/Invoice/:id" exact component={InvoiceOrder} />
           <ProtectedRoute path="/Penjualan/Invoice/:id" exact component={InvoiceSell} />

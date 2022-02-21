@@ -152,6 +152,49 @@ export const updatePassword = (passwords) => async (dispatch) => {
     }
 }
 
+//UPDATE USERS
+export const updateUsers = (id, userData) => async (dispatch) => {
+    try {
+        dispatch({
+            type: authConstants.UPDATE_USER_REQUEST
+        })
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        const { data } = await axios.put(`/backend/admin/user/${id}`, userData, config)
+        dispatch({
+            type: authConstants.UPDATE_USER_SUCCESS,
+            payload: data.success
+        })
+    } catch (error) {
+        dispatch({
+            type: authConstants.UPDATE_USER_FAILURE,
+            payload: error.response.data.message
+        })
+    }
+}
+
+//USER DETAILS 
+export const getUserDetails = (id) => async (dispatch) => {
+    try {
+        dispatch({
+            type: authConstants.DETAILS_USER_REQUEST
+        })
+        const { data } = await axios.get(`/backend/admin/user/${id}`)
+        dispatch({
+            type: authConstants.DETAILS_USER_SUCCESS,
+            payload: data.user
+        })
+    } catch (error) {
+        dispatch({
+            type: authConstants.DETAILS_USER_FAILURE,
+            payload: error.response.data.message
+        })
+    }
+}
+
 //clear errors
 export const clearErrors = () => async (dispatch) => {
     dispatch({

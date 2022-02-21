@@ -80,7 +80,7 @@ const ListUser = ({ history }) => {
                 role: user.role,
                 actions:
                     <div className="edit-btn" style={{ display: "flex", justifyContent: "space-between" }}>
-                        <Link to='#' style={{ textDecoration: "none", color: "#000" }}><FiEdit /></Link>
+                        <Link to={`/User/Edit/${user._id}`} style={{ textDecoration: "none", color: "#000" }}><FiEdit /></Link>
                         <button style={{
                             border: "none",
                             backgroundColor: "transparent"
